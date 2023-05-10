@@ -245,7 +245,7 @@
 
           <!-- Logo -->
           <div class="md:col-span-4">
-              <img src="{{ asset('img/' . get_meta_value('_logo')) }}" alt="Logo {{ ENV('APP_NAME') }}" class="w-32 mb-4" />
+              <img src="{{ asset(get_meta_value('_logo')) }}" alt="Logo {{ ENV('APP_NAME') }}" class="w-32 mb-4" />
               <p class="text-sm mb-4">{!! get_meta_value('_descWebsite') !!}</p>
 
               <!-- Social Media Section -->
