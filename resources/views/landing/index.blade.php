@@ -10,18 +10,18 @@
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="{!! get_meta_value('_nameWebsite') !!}">
   <meta property="og:description" content="{!! get_meta_value('_descWebsite') !!}">
-  <meta property="og:image" content="{{ asset('img/' . get_meta_value('_defaultImg')) }}">
+  <meta property="og:image" content="{{ asset(get_meta_value('_defaultImg')) }}">
   <meta property="og:url" content="muhamadrifqi.com">
   <meta property="og:type" content="{!! get_meta_value('_keywords') !!}">
   <meta name="twitter:card" content="{!! get_meta_value('_keywords') !!}">
   <meta name="twitter:title" content="{!! get_meta_value('_nameWebsite') !!}">
   <meta name="twitter:description" content="{!! get_meta_value('_descWebsite') !!}">
-  <meta name="twitter:image" content="{{ asset('img/' . get_meta_value('_defaultImg')) }}">
+  <meta name="twitter:image" content="{{ asset(get_meta_value('_defaultImg')) }}">
   {{-- <meta name="twitter:site" content="@username_akun_Twitter Anda">
   <meta name="twitter:creator" content="@username_penulis_Twitter"> --}}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/' . get_meta_value('_icon')) }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/' . get_meta_value('_icon')) }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/' . get_meta_value('_icon')) }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset(get_meta_value('_icon')) }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset(get_meta_value('_icon')) }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset(get_meta_value('_icon')) }}">
 
 
 
@@ -41,7 +41,7 @@
       <div class="flex items-center justify-between relative">
           <div class="px-4">
             <a href="#" width="100" height="50" class="mx-4 py-4 bg-primary opacity-60 transition duration-500 hover:bg-primary-0 hover:opacity-100">
-              <img src="{{ asset('img/' . get_meta_value('_logo')) }}" alt="{!! get_meta_value('_nameWebsite') !!}" width="100" height="50">
+              <img src="{{ asset(get_meta_value('_logo')) }}" alt="{!! get_meta_value('_nameWebsite') !!}" width="100" height="50">
             </a>
           </div>
           <div class="flex items-center px-4">
@@ -87,11 +87,11 @@
               <div class="font-medium text-secondary mb-10 leading-relaxed">
                 {!! get_meta_value('_description') !!}
               </div>
-              <a href="{{ asset('uploads/' . get_meta_value('_cv')) }}" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Download My CV</a>
+              <a href="{{ asset(get_meta_value('_cv')) }}" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Download My CV</a>
           </div>
           <div class="w-full self-end px-6 lg:w-1/2 hidden md:block">
             <div class="relative mt-10 lg:mt-9 lg:right-0">
-                <img width="400" height="400" src="{{ asset('img/agent/' . get_meta_value('_photo')) }}" alt="profil" class="w-auto max-w-full mx-auto sm:w-64 md:w-96 lg:w-full">
+                <img width="400" height="400" src="{{ asset(get_meta_value('_photo')) }}" alt="profil" class="w-auto max-w-full mx-auto sm:w-64 md:w-96 lg:w-full">
                 <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
                     <svg width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#14b8a6" d="M29.2,-51C39.7,-44.6,51.4,-40.5,58,-32.4C64.6,-24.2,66.3,-12.1,69.9,2.1C73.5,16.3,79,32.6,73.7,43C68.4,53.4,52.3,58,38.2,56.7C24.1,55.5,12,48.5,-1.8,51.7C-15.7,54.8,-31.4,68.2,-43.4,68.2C-55.4,68.2,-63.6,54.9,-67.6,41.3C-71.6,27.7,-71.3,13.8,-66.7,2.6C-62.1,-8.6,-53.4,-17.2,-49.1,-30.2C-44.8,-43.3,-45,-60.8,-37.6,-69.1C-30.2,-77.3,-15.1,-76.3,-2.9,-71.3C9.4,-66.3,18.7,-57.5,29.2,-51Z" transform="translate(100 100) scale(1.2)"/>
