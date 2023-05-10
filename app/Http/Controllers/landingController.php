@@ -11,7 +11,7 @@ class landingController extends Controller
 {
     public function index()
     {
-        $portfolio = portfolio::all();
+        $portfolio = portfolio::orderBy('created_at', 'desc')->take(6)->get();
         $meta = metadata::all();
         $clients = clients::all();
         return view('landing.index')->with([

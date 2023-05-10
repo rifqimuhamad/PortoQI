@@ -24,11 +24,11 @@ const strings = {
     getAttribute: "getAttribute",
     creatorName: "Muhamad Rifqi",
     creatorLink: "https://muhamadrifqi.com",
-    copyrightLine1: "<p class=\"text-sm\">",
-    copyrightLine2: "© <span id=\"copyright\">",
+    copyrightLine1: '<p class="text-sm">',
+    copyrightLine2: '© <span id="copyright">',
     copyrightLine3: "</span> ",
-    copyrightLine4: "<a href=\"",
-    copyrightLine5: "\" target=\"_blank\" rel=\"noopener noreferrer\">. Created by ",
+    copyrightLine4: '<a href="',
+    copyrightLine5: '" target="_blank" rel="noopener noreferrer">. Created by ',
     copyrightLine6: "</a>",
     copyrightLine7: "</p>",
     innerHTML: "innerHTML",
@@ -54,8 +54,12 @@ hamburger[strings.addEventListener](strings.click, function () {
 
 document[strings.addEventListener](strings.DOMContentLoaded, function () {
     const currentYear = new Date()[strings.getFullYear]();
-    const copyrightContainer = document[strings.getElementById](strings.copyrightContainer);
-    const appName = copyrightContainer[strings.getAttribute](strings.dataAppName);
+    const copyrightContainer = document[strings.getElementById](
+        strings.copyrightContainer
+    );
+    const appName = copyrightContainer[strings.getAttribute](
+        strings.dataAppName
+    );
 
     const copyrightHTML = `${strings.copyrightLine1}${strings.copyrightLine2}${currentYear}${strings.copyrightLine3}${appName}${strings.copyrightLine4}${strings.creatorLink}${strings.copyrightLine5}${strings.creatorName}${strings.copyrightLine6}${strings.copyrightLine7}`;
 

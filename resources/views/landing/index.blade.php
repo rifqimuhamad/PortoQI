@@ -144,8 +144,8 @@
 </section>
 <!-- About Section end -->
 <!-- portfolio Section start -->
-<section id="portfolio" class="pt-36 pb-16 bg-slate-100">
-  <div class="container">
+<section id="portfolio" class="pt-36 pb-16 bg-gray-100">
+  <div class="container mx-auto">
     <div class="w-full px-4">
       <div class="max-w-xl mx-auto text-center mb-16">
         <h4 class="font-semibold text-lg text-primary mb-2">{!! get_meta_value('_subjudul2') !!}</h4>
@@ -158,11 +158,17 @@
     <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
       @foreach($portfolios as $portfolio)
       <div class="mb-12 p-4 md:w-1/2">
-        <div class="rouded-md shadow-md overflow-hidden">
-          <img src="{{ asset('img/portfolio/' . $portfolio->image) }}" alt="{{ $portfolio->judul }}" class="w-full">
+        <div class="rounded-md shadow-md overflow-hidden relative">
+          <!-- Add this line for the category badge -->
+          <span
+                class="font-semibold text-white text-sm py-1 px-3 rounded-full shadow-lg absolute top-3 left-3 transform hover:scale-110 transition duration-300"
+              >
+                {{ $portfolio->kategory }}
+          </span>
+        <img src="{{ asset('img/portfolio/' . $portfolio->image) }}" alt="{{ $portfolio->judul }}" class="w-full">
         </div>
-        <h3 class="font-semibold text-xl text-dark mt-5 mb-3">{{ $portfolio->judul }}</h3>
-        <div class="font-medium text-base text-secondary">
+        <h3 class="font-semibold text-xl text-gray-800 mt-5 mb-3">{{ $portfolio->judul }}</h3>
+        <div class="font-medium text-base text-gray-600">
           {!! $portfolio->isi !!}
         </div>
         {{-- <p class="font-medium text-base text-secondary">{{ $portfolio->isi }}</p> --}}
@@ -171,6 +177,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- Clients Section start -->
 <section id="clients" class="pt-36 pb-32 bg-slate-700">
