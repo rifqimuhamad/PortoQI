@@ -82,7 +82,7 @@
               <label for="defaultImg" class="text-white block mb-2 font-semibold">
                 Default Image
               </label>
-              <img src="{{ asset('img/agent/' . get_meta_value('_defaultImg')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
+              <img src="{{ asset(get_meta_value('_defaultImg')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
               <input
                 type="file"
                 name="_defaultImg"
@@ -100,7 +100,7 @@
               <label for="logo" class="text-white block mb-2 font-semibold">
                 Logo
               </label>
-              <img src="{{ asset('img/agent/' . get_meta_value('_logo')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
+              <img src="{{ asset(get_meta_value('_logo')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
               <input
                 type="file"
                 name="_logo"
@@ -118,7 +118,7 @@
               <label for="icon" class="text-white block mb-2 font-semibold">
                 Icons
               </label>
-              <img src="{{ asset('img/agent/' . get_meta_value('_icon')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
+              <img src="{{ asset(get_meta_value('_icon')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
               <input
                 type="file"
                 name="_icon"
