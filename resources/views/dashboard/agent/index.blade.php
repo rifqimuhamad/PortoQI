@@ -86,7 +86,7 @@
               <label for="photo" class="text-white block mb-2 font-semibold">
                 Photo
               </label>
-              <img src="{{ asset('img/agent/' . get_meta_value('_photo')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
+              <img src="{{ asset(get_meta_value('_photo')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
               <input
                 type="file"
                 name="_photo"
