@@ -91,7 +91,7 @@
           </div>
           <div class="w-full self-end px-6 lg:w-1/2 hidden md:block">
             <div class="relative mt-10 lg:mt-9 lg:right-0">
-              <img src="{{ asset(get_meta_value('_photo')) }}" alt="profil" class="mx-auto object-cover shadow-white-shadow max-w-full w-full sm:w-64 md:w-96 lg:w-1/2 xl:w-2/5">
+              <img src="{{ asset(get_meta_value('_photo')) }}" alt="profil" class="mx-auto object-cover shadow-white-shadow max-w-full w-full sm:w-64 md:w-96 lg:w-1/2 xl:w-1/5">
             </div>
           
           </div>        
