@@ -256,7 +256,8 @@
       </div>
 
       <!-- Copyright Section -->
-      <div class="text-center mt-8" id="copyright-container" data-appname="{{ env('APP_NAME') }}">
+      <div class="text-center mt-8">
+          <p class="text-sm">© <span id="copyright"></span> {{ ENV('APP_NAME') }}. All rights reserved.</p>
       </div>
   </div>
 </footer>
