@@ -76,6 +76,18 @@ MAIL_FROM_NAME="Your App Name"
 
 ```
 
+Continue to Install Composer
+
+```
+composer install
+```
+
+Continue to Install NPM
+
+```
+npm install
+```
+
 Continue to migrate through the terminal
 
 ```
