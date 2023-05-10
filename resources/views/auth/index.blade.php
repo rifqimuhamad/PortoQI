@@ -53,15 +53,16 @@
 
 <!-- Body Login Start -->
     @if (Session::has('error'))
-    <section class="pt-36 min-h-screen flex items-center justify-center">
-        <div class="container">
-            <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
-                <p class="font-bold">Error</p>
-                <p>{{ Session::get('error') }}</p>
-            </div>
-        </div>
-    </section>    
+        <section class="flex items-center justify-center py-4">
+          <div class="container">
+              <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                  <p class="font-bold">Error</p>
+                  <p>{{ Session::get('error') }}</p>
+              </div>
+          </div>
+      </section>
     @endif
+
 
 <section class="pt-20 pb-20 bg-gray-50 min-h-screen flex items-center justify-center">
     <!-- login container -->
@@ -86,7 +87,7 @@
   
       <!-- image -->
       <div class="md:block hidden w-1/2">
-        <img class="rounded-2xl" src="{{ asset('img\login.webp') }}">
+        <img class="rounded-2xl" src="{{ asset('img\logo\login.webp') }}">
       </div>
     </div>
   </section>

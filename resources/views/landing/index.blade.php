@@ -3,10 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ ENV('APP_NAME') }}</title>
-  {{-- <link rel="stylesheet" href="{{ asset('admin') }}\assets\css\script.css">  --}}
-  {{-- <link rel="stylesheet" href="{{ asset('build\assets\app-47bfb29a.css') }}"> 
-  <script src="{{ asset('build\assets\app-a6d2e222.js') }}"></script> --}}
+  <title>{!! get_meta_value('_nameWebsite') !!} | {!! get_meta_value('_slogan') !!}</title>
+  <meta name="description" content="{!! get_meta_value('_descWebsite') !!}">
+  <meta name="keywords" content="{!! get_meta_value('_keywords') !!}">
+  <meta name="author" content="Muhamad Rifqi">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="{!! get_meta_value('_nameWebsite') !!}">
+  <meta property="og:description" content="{!! get_meta_value('_descWebsite') !!}">
+  <meta property="og:image" content="{{ asset('img/' . get_meta_value('_defaultImg')) }}">
+  <meta property="og:url" content="muhamadrifqi.com">
+  <meta property="og:type" content="{!! get_meta_value('_keywords') !!}">
+  <meta name="twitter:card" content="{!! get_meta_value('_keywords') !!}">
+  <meta name="twitter:title" content="{!! get_meta_value('_nameWebsite') !!}">
+  <meta name="twitter:description" content="{!! get_meta_value('_descWebsite') !!}">
+  <meta name="twitter:image" content="{{ asset('img/' . get_meta_value('_defaultImg')) }}">
+  {{-- <meta name="twitter:site" content="@username_akun_Twitter Anda">
+  <meta name="twitter:creator" content="@username_penulis_Twitter"> --}}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/' . get_meta_value('_icon')) }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/' . get_meta_value('_icon')) }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/' . get_meta_value('_icon')) }}">
+
+
+
   @vite('resources/css/app.css')
   <!-- CSS code for the pop-up -->
 
@@ -23,7 +41,7 @@
       <div class="flex items-center justify-between relative">
           <div class="px-4">
             <a href="#" width="100" height="50" class="mx-4 py-4 bg-primary opacity-60 transition duration-500 hover:bg-primary-0 hover:opacity-100">
-              <img src="{{ asset('img\logo\logo-1.png') }}" alt="Muhamad Rifqi" width="100" height="50">
+              <img src="{{ asset('img/' . get_meta_value('_logo')) }}" alt="{!! get_meta_value('_nameWebsite') !!}" width="100" height="50">
             </a>
           </div>
           <div class="flex items-center px-4">
@@ -183,9 +201,11 @@
   <div class="container">
     <div class="w-full px-4">
       <div class="max-w-xl mx-auto text-center mb-16">
-        <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-        <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Contact Me</h2>
-        <p class="font-medium text-md text-secondary md:text-lg">Contact me if you need web design, graphic design, and computer or laptop service.</p>
+        <h4 class="font-semibold text-lg text-primary mb-2">{!! get_meta_value('_subjudul4') !!}</h4>
+        <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">{!! get_meta_value('_judul3') !!}</h2>
+        <div class="font-medium text-md text-secondary md:text-lg">
+          {!! get_meta_value('_desc4') !!}
+        </div>      
       </div>
     </div>
     @if (session('success'))
@@ -225,8 +245,8 @@
 
           <!-- Logo -->
           <div class="md:col-span-4">
-              <img src="{{ asset('img\logo\logo-1.png') }}" alt="Logo {{ ENV('APP_NAME') }}" class="w-32 mb-4" />
-              <p class="text-sm mb-4">This website is carefully designed to showcase a series of captivating projects I've created, highlighting my creativity and talent across a range of exciting endeavors.</p>
+              <img src="{{ asset('img/' . get_meta_value('_logo')) }}" alt="Logo {{ ENV('APP_NAME') }}" class="w-32 mb-4" />
+              <p class="text-sm mb-4">{!! get_meta_value('_descWebsite') !!}</p>
 
               <!-- Social Media Section -->
               <div class="flex">
@@ -256,13 +276,12 @@
       </div>
 
       <!-- Copyright Section -->
-      <div class="text-center mt-8">
-          <p class="text-sm">© <span id="copyright"></span> {{ ENV('APP_NAME') }}. All rights reserved.</p>
+      <div class="text-center mt-8" id="copyright-container" data-appname="{{ env('APP_NAME') }}">
       </div>
   </div>
 </footer>
 <!-- foother Section end -->
 
-<script src="{{ asset('admin') }}\assets\js\script.js"></script>
+<script src="{{ asset('admin') }}/assets/js/script.js"></script>
 </body>
 </html>

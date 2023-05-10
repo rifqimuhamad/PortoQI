@@ -74,7 +74,7 @@
                 required
               >
               <div class="w-full bg-gray-800 rounded-lg py-2 px-3 text-white focus:outline-none focus:shadow-outline" id="editor">
-                {{ get_meta_value('_description') }} 
+                {!! get_meta_value('_description') !!} 
                 </div>
             
               @error('description')
@@ -86,11 +86,12 @@
               <label for="photo" class="text-white block mb-2 font-semibold">
                 Photo
               </label>
-              {{-- <img src="{{ asset('img/portfolio/' . $data->image) }}" alt="{{ $data->judul }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;"> --}}
+              <img src="{{ asset('img/agent/' . get_meta_value('_photo')) }}" alt="{{ get_meta_value('_name') }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;">
               <input
                 type="file"
                 name="_photo"
                 id="photo"
+                value="{{ get_meta_value('_photo') }}"
                 class="w-full bg-gray-800 rounded-lg py-2 px-3 text-white focus:outline-none focus:shadow-outline"
               >
 
@@ -101,13 +102,14 @@
             <!-- CV postingan -->
             <div class="mb-4">
               <label for="cv" class="text-white block mb-2 font-semibold">
-                Photo
+                CV
               </label>
               {{-- <img src="{{ asset('img/portfolio/' . $data->image) }}" alt="{{ $data->judul }}" class="h-10 w-10 object-cover sm:max-w-sm mx-auto" style="float: left;"> --}}
               <input
                 type="file"
                 name="_cv"
                 id="cv"
+                value="{{ get_meta_value('_cv') }}"
                 class="w-full bg-gray-800 rounded-lg py-2 px-3 text-white focus:outline-none focus:shadow-outline"
               >
 

@@ -9,9 +9,11 @@ use App\Http\Controllers\agentController;
 use App\Http\Controllers\skillController;
 use App\Http\Controllers\clientController;
 use App\Http\Controllers\landingController;
+use App\Http\Controllers\settingController;
 use App\Http\Controllers\cSubJudulController;
 use App\Http\Controllers\portfolioController;
 use App\Http\Controllers\pSubJudulController;
+use App\Http\Controllers\settingHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,11 +58,9 @@ Route::prefix('dashboard')->middleware('auth')->group(
         Route::post('agent', [agentController::class, "update"])->name('agent.update');
         Route::get('about', [aboutController::class,"index"])->name('about.index');
         Route::post('about', [aboutController::class, "update"])->name('about.update'); 
-        Route::get('portfolioSubJudul', [pSubJudulController::class,"index"])->name('portfolioSubJudul.index');
-        Route::post('portfolioSubJudul', [pSubJudulController::class, "update"])->name('portfolioSubJudul.update');
-        Route::get('clientSubJudul', [cSubJudulController::class,"index"])->name('clientSubJudul.index');
-        Route::post('clientSubJudul', [cSubJudulController::class, "update"])->name('clientSubJudul.update');
-
-
+        Route::get('setting-website', [settingController::class,"index"])->name('setting-website.index');
+        Route::post('setting-website', [settingController::class, 'update'])->name('setting-website.update');
+        Route::get('setting-home', [settingHomeController::class,"index"])->name('setting-home.index');
+        Route::post('setting-home', [settingHomeController::class, 'update'])->name('setting-home.update');
     }
 );
