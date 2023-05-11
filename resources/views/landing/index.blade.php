@@ -22,7 +22,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset(get_meta_value('_icon')) }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ asset(get_meta_value('_icon')) }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ asset(get_meta_value('_icon')) }}">
-
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
 
 
   @vite('resources/css/app.css')
@@ -91,7 +94,7 @@
           </div>
           <div class="w-full self-end px-6 lg:w-1/2 hidden md:block">
             <div class="relative mt-10 lg:mt-9 lg:right-0">
-              <img src="{{ asset(get_meta_value('_photo')) }}" alt="profil" class="mx-auto object-cover shadow-white-shadow max-w-full w-full sm:w-64 md:w-96 lg:w-1/2 xl:w-1/5">
+              <img src="{{ asset(get_meta_value('_photo')) }}" alt="profil" class="mx-auto object-cover shadow-white-shadow max-w-full w-full sm:w-64 md:w-96 lg:w-1/2 xl:w-1/2">
             </div>
           
           </div>        
@@ -191,12 +194,16 @@
       </div>
     </div>
     <div class="w-full px-4">
-      <div class="flex flex-wrap items-center justify-center">
-      @foreach($clients as $data)
-        <a href="#" class="max-w-[170px]   mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
-          <img src="{{ asset('img/clients/' . $data->image) }}" alt="{{ $data->judul }}">
-        </a>
-        @endforeach
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          @foreach($clients as $data)
+            <div class="swiper-slide">
+              <a href="#" class="max-w-[170px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                <img src="{{ asset('img/clients/' . $data->image) }}" alt="{{ $data->judul }}" class="object-cover">
+              </a>
+            </div>
+          @endforeach
+        </div>
       </div>
     </div>
   </div>
@@ -314,10 +321,28 @@ $(document).ready(function(){
 });
 
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1, // Ubah nilai ini menjadi 1
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 3000, // TimeInterval di antara slide (dalam milidetik)
+    },
+    breakpoints: {
+      // Saat lebar layar berukuran 640px atau lebih besar
+      640: {
+        slidesPerView: 3, // Ubah nilai ini menjadi 3
+        spaceBetween: 0,
+      },
+    },
+  });
+});
 
 
 
 </script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </body>
 </html>
