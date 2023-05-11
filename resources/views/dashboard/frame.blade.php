@@ -42,58 +42,9 @@
                 <span class="hidden md:block">{{ Auth::user()->name}} - ADMIN</span>
               </div>
               <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
-                <div class="bg-white rounded flex items-center w-full max-w-xl mr-4 p-2 shadow-sm border border-gray-200">
-                  <button class="outline-none focus:outline-none">
-                    <svg class="w-5 text-gray-600 h-5 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                  </button>
-                  <input type="search" name="" id="" placeholder="Search" class="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent" />
+                <div class="rounded flex items-center w-full max-w-xl mr-4 p-2 shadow-sm">
                 </div>
                 <ul class="flex items-center">
-                  <li>
-                    <button
-                      aria-hidden="true"
-                      @click="toggleTheme"
-                      class="group p-2 transition-colors duration-200 rounded-full shadow-md bg-blue-200 hover:bg-blue-200 dark:bg-gray-50 dark:hover:bg-gray-200 text-gray-900 focus:outline-none"
-                    >
-                      <svg
-                        x-show="isDark"
-                        width="24"
-                        height="24"
-                        class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke=""
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                        />
-                      </svg>
-                      <svg
-                        x-show="!isDark"
-                        width="24"
-                        height="24"
-                        class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke=""
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                  <li>
-                    <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
-                  </li>
                   <li>
                     <a href="{{ url('auth/logout') }}" class="flex items-center mr-4 hover:text-blue-100">
                       <span class="inline-flex mr-1">
@@ -178,68 +129,6 @@
                       </li>
                     </ul>
                   </li>
-                  
-                  {{-- <li class="relative">
-                    <button id="dropdown1-btn" class="relative flex flex-row items-center h-11 w-full focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                      <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                      </span>
-                      <span class="ml-2 text-sm tracking-wide truncate">Home</span>
-                    </button>
-                    <ul id="submenu1" class="absolute left-0 w-full bg-blue-700 z-20 hidden space-y-2 mt-2">
-                      <li> 
-                        <a href="{{ route('agent.index') }}" class="relative flex flex-row items-center h-11 px-3 focus:outline-none hover:bg-blue-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800">
-                          <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ route('about.index') }}" class="relative flex flex-row items-center h-11 px-3 focus:outline-none hover:bg-blue-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800">
-                          <span class="ml-2 text-sm tracking-wide truncate">About</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="relative">
-                    <button id="dropdown2-btn" class="relative flex flex-row items-center h-11 w-full focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                      <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"></path></svg>
-                      </span>
-                      <span class="ml-2 text-sm tracking-wide truncate">Portofolio</span>
-                    </button>
-                    <ul id="submenu2" class="absolute left-0 w-full bg-blue-700 z-20 hidden space-y-2 mt-2">
-                      <li>
-                        <a href="{{ route('portfolioSubJudul.index') }}" class="relative flex flex-row items-center h-11 px-3 focus:outline-none hover:bg-blue-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800">
-                          <span class="ml-2 text-sm tracking-wide truncate">SubJudul</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ route('portfolio.index') }}" class="relative flex flex-row items-center h-11 px-3 focus:outline-none hover:bg-blue-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800">
-                          <span class="ml-2 text-sm tracking-wide truncate">Portofolio</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="relative">
-                    <button id="dropdown3-btn" class="relative flex flex-row items-center h-11 w-full focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                      <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">  <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"></path>
-                        </svg>
-                      </span>
-                      <span class="ml-2 text-sm tracking-wide truncate">Clients</span>
-                    </button>
-                    <ul id="submenu3" class="absolute left-0 w-full bg-blue-700 z-20 hidden space-y-2 mt-2">
-                      <li>
-                        <a href="{{ route('clientSubJudul.index') }}" class="relative flex flex-row items-center h-11 px-3 focus:outline-none hover:bg-blue-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800">
-                          <span class="ml-2 text-sm tracking-wide truncate">SubJudul</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ route('clients.index') }}" class="relative flex flex-row items-center h-11 px-3 focus:outline-none hover:bg-blue-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800">
-                          <span class="ml-2 text-sm tracking-wide truncate">Clients</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li> --}}
                 </ul>
                 <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">Copyright @2021</p>
               </div>
@@ -257,13 +146,13 @@
           </div>
         </div>    
         
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+        {{-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script> --}}
         <script src="{{ asset('admin') }}\assets\js\frame.js"></script>
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        @vite('resources/js/app.js')
 
       
         <script>
-          
           var toolbarOptions = [
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
             ['blockquote', 'code-block'],
@@ -319,7 +208,35 @@
             var content = quill4.root.innerHTML;
             document.getElementById('tester').value = content;
           });
-          
+          const setup = () => {
+            const getTheme = () => {
+                if (window.localStorage.getItem("dark")) {
+                    return JSON.parse(window.localStorage.getItem("dark"));
+                }
+                return (
+                    !!window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                );
+            };
+
+            const setTheme = (value) => {
+                window.localStorage.setItem("dark", value);
+            };
+
+            return {
+                loading: true,
+                isDark: getTheme(),
+                toggleTheme() {
+                    this.isDark = !this.isDark;
+                    setTheme(this.isDark);
+                },
+            };
+          };
+          document.getElementById("dropdown1-btn").addEventListener("click", function () {
+              var submenu = document.getElementById("submenu1");
+              submenu.classList.toggle("hidden");
+          });
+
         </script>
 </body>
 </html>
