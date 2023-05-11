@@ -116,18 +116,3 @@
         width: calc(100% - 16rem);
     }
 }
-.ql-toolbar {
-    background-color: white !important;
-}
-.tokenfield .token {
-    margin: -1px 1px 1px 1px;
-    height: 25px;
-    line-height: 22px;
-    color: #fff;
-    background-color: #0b5ed7;
-}
-
-.tokenfield .token a {
-    color: #ffffff;
-    text-decoration: none;
-}

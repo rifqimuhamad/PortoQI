@@ -100,10 +100,12 @@ Continue, generate key
 php artisan key:generate
 ```
 
-Run the project with the command
+Run the project with two commands
+note(both must be run both so that laravel and vite run because css and js are called using vite reducing display bugs.)
 
 ```
 php artisan serve
+npm run dev
 ```
 
 Please open at <code>http://127.0.0.1:8000</code>

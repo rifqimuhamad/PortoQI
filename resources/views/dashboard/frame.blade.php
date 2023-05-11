@@ -9,137 +9,28 @@
   <!-- Add Quill's CSS -->
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   @vite('resources/css/app.css')
-  {{-- <link rel="stylesheet" type="text/css"
-  href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-  <link rel="stylesheet"
-  integrity="sha512-wcf2ifw+8xI4FktrSorGwO7lgRzGx1ld97ySj1pFADZzFdcXTIgQhHMTo7tQIADeYdRRnAjUnF00Q5WTNmL3+A=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
 
 </head>
 <body>
-    {{-- <style>
-        /* Compiled dark classes from Tailwind */
-        .dark .dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
-          border-color: rgba(55, 65, 81);
-        }
-        .dark .dark\:bg-gray-50 {
-          background-color: rgba(249, 250, 251);
-        }
-        .dark .dark\:bg-gray-100 {
-          background-color: rgba(243, 244, 246);
-        }
-        .dark .dark\:bg-gray-600 {
-          background-color: rgba(75, 85, 99);
-        }
-        .dark .dark\:bg-gray-700 {
-          background-color: rgba(55, 65, 81);
-        }
-        .dark .dark\:bg-gray-800 {
-          background-color: rgba(31, 41, 55);
-        }
-        .dark .dark\:bg-gray-900 {
-          background-color: rgba(17, 24, 39);
-        }
-        .dark .dark\:bg-red-700 {
-          background-color: rgba(185, 28, 28);
-        }
-        .dark .dark\:bg-green-700 {
-          background-color: rgba(4, 120, 87);
-        }
-        .dark .dark\:hover\:bg-gray-200:hover {
-          background-color: rgba(229, 231, 235);
-        }
-        .dark .dark\:hover\:bg-gray-600:hover {
-          background-color: rgba(75, 85, 99);
-        }
-        .dark .dark\:hover\:bg-gray-700:hover {
-          background-color: rgba(55, 65, 81);
-        }
-        .dark .dark\:hover\:bg-gray-900:hover {
-          background-color: rgba(17, 24, 39);
-        }
-        .dark .dark\:border-gray-100 {
-          border-color: rgba(243, 244, 246);
-        }
-        .dark .dark\:border-gray-400 {
-          border-color: rgba(156, 163, 175);
-        }
-        .dark .dark\:border-gray-500 {
-          border-color: rgba(107, 114, 128);
-        }
-        .dark .dark\:border-gray-600 {
-          border-color: rgba(75, 85, 99);
-        }
-        .dark .dark\:border-gray-700 {
-          border-color: rgba(55, 65, 81);
-        }
-        .dark .dark\:border-gray-900 {
-          border-color: rgba(17, 24, 39);
-        }
-        .dark .dark\:hover\:border-gray-800:hover {
-          border-color: rgba(31, 41, 55);
-        }
-        .dark .dark\:text-white {
-          color: rgba(255, 255, 255);
-        }
-        .dark .dark\:text-gray-50 {
-          color: rgba(249, 250, 251);
-        }
-        .dark .dark\:text-gray-100 {
-          color: rgba(243, 244, 246);
-        }
-        .dark .dark\:text-gray-200 {
-          color: rgba(229, 231, 235);
-        }
-        .dark .dark\:text-gray-400 {
-          color: rgba(156, 163, 175);
-        }
-        .dark .dark\:text-gray-500 {
-          color: rgba(107, 114, 128);
-        }
-        .dark .dark\:text-gray-700 {
-          color: rgba(55, 65, 81);
-        }
-        .dark .dark\:text-gray-800 {
-          color: rgba(31, 41, 55);
-        }
-        .dark .dark\:text-red-100 {
-          color: rgba(254, 226, 226);
-        }
-        .dark .dark\:text-green-100 {
-          color: rgba(209, 250, 229);
-        }
-        .dark .dark\:text-blue-400 {
-          color: rgba(96, 165, 250);
-        }
-        .dark .group:hover .dark\:group-hover\:text-gray-500 {
-          color: rgba(107, 114, 128);
-        }
-        .dark .group:focus .dark\:group-focus\:text-gray-700 {
-          color: rgba(55, 65, 81);
-        }
-        .dark .dark\:hover\:text-gray-100:hover {
-          color: rgba(243, 244, 246);
-        }
-        .dark .dark\:hover\:text-blue-500:hover {
-          color: rgba(59, 130, 246);
-        }
-      
-        /* Custom style */
-        .header-right {
-            width: calc(100% - 3.5rem);
-        }
-        .sidebar:hover {
-            width: 16rem;
-        }
-        @media only screen and (min-width: 768px) {
-            .header-right {
-                width: calc(100% - 16rem);
-            }        
-        }
+    <style>
+          .ql-toolbar {
+            background-color: white !important;
+          }
+          .tokenfield .token {
+              margin: -1px 1px 1px 1px;
+              height: 25px;
+              line-height: 22px;
+              color: #fff;
+              background-color: #0b5ed7;
+          }
+
+          .tokenfield .token a {
+              color: #ffffff;
+              text-decoration: none;
+          }
         
-    </style> --}}
+    </style>
 
         <div x-data="setup()" :class="{ 'dark': isDark }">
           <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
@@ -368,56 +259,7 @@
         
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
         <script src="{{ asset('admin') }}\assets\js\frame.js"></script>
-        {{-- <!-- Add jQuery before other libraries -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
-        <!-- Then add jQuery UIand Bootstrap Tokenfield -->
-        <!-- Bootstrap Tokenfield -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css" rel="stylesheet">       --}}
-        <!-- Add Quill's JS -->
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-          {{-- <script>
-            $(document).ready(function () {
-              $("#judul").tokenfield({
-                autocomplete: {
-                  source: [{!! $skill !!}],
-                  delay: 100
-                },
-                showAutocompleteOnFocus: true,
-                createTokensOnBlur: true
-              })
-              .on('tokenfield:createtoken', function (e) {
-                setTimeout(function () {
-                  updateTokenfieldClass();
-                  applyDeviconToToken(e);
-                }, 100);
-              });
-
-              // Fungsi untuk menggabungkan kelas Devicon dengan Tokenfield
-              function applyDeviconToToken(e) {
-                const token = e.relatedTarget;
-                const iconName = e.attrs.value; // Sesuaikan ini sesuai dengan properti yang sesuai dari objek $skill Anda
-                const iconClass = `devicon-${iconName.toLowerCase()}`;
-                token.prepend($('<i>').addClass('devicon').addClass(iconClass));
-              }
-
-              // Kode untuk menggantikan class bootstrap dengan class Tailwind CSS
-              updateTokenfieldClass();
-            });
-
-            function updateTokenfieldClass() {
-              $('.token').each(function (index, element) {
-                var classesToAdd = 'bg-gray-300 rounded font-semibold p-1 mr-1';
-                $(element).addClass(classesToAdd).removeClass('token');
-              });
-
-              $('.close').each(function (index, element) {
-                var classesToAdd = 'ml-1 text-xs';
-                $(element).addClass(classesToAdd).removeClass('close');
-              });
-            }
-          </script> --}}
 
       
         <script>

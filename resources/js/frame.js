@@ -27,6 +27,15 @@ document.getElementById("dropdown1-btn").addEventListener("click", function () {
     submenu.classList.toggle("hidden");
 });
 
+document.getElementById("dropdown2-btn").addEventListener("click", function () {
+    var submenu = document.getElementById("submenu2");
+    submenu.classList.toggle("hidden");
+});
+document.getElementById("dropdown3-btn").addEventListener("click", function () {
+    var submenu = document.getElementById("submenu3");
+    submenu.classList.toggle("hidden");
+});
+
 var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],

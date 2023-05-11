@@ -295,54 +295,10 @@
 </footer>
 <!-- foother Section end -->
 
-<script src="{{ asset('admin') }}/assets/js/script.js"></script>
 <!-- Add the jQuery script -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Mengubah elemen pertama menjadi yang terpilih pada awal
-  $('.category-btn:first-child').addClass('selected');
-
-  $(".category-btn").click(function() {
-    let filterValue = $(this).attr("data-category");
-
-    // Hapus kelas 'selected' dari tombol yang sebelumnya terpilih, dan tambahkan ke tombol yang baru
-    $(".category-btn").removeClass('selected');
-    $(this).addClass('selected');
-
-    // Tampilkan semua elemen dengan nilai data-category yang sesuai, dan sembunyikan yang lain
-    $("#portfolio .item").hide().filter("[data-category='" + filterValue + "']").show();
-
-    // Tampilkan elemen * jika filterValue adalah `All`
-    if (filterValue === "All") {
-      $("#portfolio .item").show();
-    }
-  });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1, // Ubah nilai ini menjadi 1
-    spaceBetween: 0,
-    loop: true,
-    autoplay: {
-      delay: 3000, // TimeInterval di antara slide (dalam milidetik)
-    },
-    breakpoints: {
-      // Saat lebar layar berukuran 640px atau lebih besar
-      640: {
-        slidesPerView: 3, // Ubah nilai ini menjadi 3
-        spaceBetween: 0,
-      },
-    },
-  });
-});
-
-
-
-</script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+@vite('resources/js/app.js')
 
 </body>
 </html>
