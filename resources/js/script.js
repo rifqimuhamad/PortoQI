@@ -35,3 +35,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     copyrightContainer.innerHTML = copyrightHTML;
 });
+$(document).ready(function () {
+    // Mengubah elemen pertama menjadi yang terpilih pada awal
+    $(".category-btn:first-child").addClass("selected");
+    $(".category-btn").click(function () {
+        let filterValue = $(this).attr("data-category");
+        // Hapus kelas 'selected' dari tombol yang sebelumnya terpilih, dan tambahkan ke tombol yang baru
+        $(".category-btn").removeClass("selected");
+        $(this).addClass("selected");
+        // Tampilkan semua elemen dengan nilai data-category yang sesuai, dan sembunyikan yang lain
+        $("#portfolio .item")
+            .hide()
+            .filter("[data-category='" + filterValue + "']")
+            .show();
+        // Tampilkan elemen * jika filterValue adalah `All`
+        if (filterValue === "All") {
+            $("#portfolio .item").show();
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1, // Ubah nilai ini menjadi 1
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+            delay: 3000, // TimeInterval di antara slide (dalam milidetik)
+        },
+        breakpoints: {
+            // Saat lebar layar berukuran 640px atau lebih besar
+            640: {
+                slidesPerView: 3, // Ubah nilai ini menjadi 3
+                spaceBetween: 0,
+            },
+        },
+    });
+});
