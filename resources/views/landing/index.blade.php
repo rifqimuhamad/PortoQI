@@ -149,17 +149,22 @@
         </div>
       </div>
     </div>
+
+    <!-- Add this section for category buttons -->
+    <div class="w-full px-4 text-center mb-4">
+      <button class="category-btn bg-blue-500 text-white px-4 py-2 rounded-md shadow-md mr-2 mb-2" data-category="All">All</button>
+      @foreach($portfolios->unique('kategory') as $portfolio) <!-- Menggunakan 'unique()' untuk menghilangkan duplikat kategori -->
+      <button class="category-btn bg-blue-500 text-white px-4 py-2 rounded-md shadow-md mr-2 mb-2" data-category="{{ $portfolio->kategory }}">{{ $portfolio->kategory }}</button>
+      @endforeach
+    </div>
+
+
     <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
       @foreach($portfolios as $portfolio)
-      <div class="mb-12 p-4 md:w-1/2">
+      <div class="item  mb-12 p-4 md:w-1/2" data-category="{{ $portfolio->kategory }}">
         <div class="rounded-md shadow-md overflow-hidden relative">
-          <!-- Add this line for the category badge -->
-          <span
-                class="font-semibold text-white text-sm py-1 px-3 rounded-full shadow-lg absolute top-3 left-3 transform hover:scale-110 transition duration-300"
-              >
-                {{ $portfolio->kategory }}
-          </span>
-        <img src="{{ asset('img/portfolio/' . $portfolio->image) }}" alt="{{ $portfolio->judul }}" class="w-full">
+          <span class="font-semibold text-white text-sm py-1 px-3 rounded-full shadow-lg absolute top-3 left-3 transform hover:scale-110 transition duration-300">{{ $portfolio->kategory }}</span>
+          <img src="{{ asset('img/portfolio/' . $portfolio->image) }}" alt="{{ $portfolio->judul }}" class="w-full">
         </div>
         <h3 class="font-semibold text-xl text-gray-800 mt-5 mb-3">{{ $portfolio->judul }}</h3>
         <div class="font-medium text-base text-gray-600">
@@ -284,5 +289,35 @@
 <!-- foother Section end -->
 
 <script src="{{ asset('admin') }}/assets/js/script.js"></script>
+<!-- Add the jQuery script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Mengubah elemen pertama menjadi yang terpilih pada awal
+  $('.category-btn:first-child').addClass('selected');
+
+  $(".category-btn").click(function() {
+    let filterValue = $(this).attr("data-category");
+
+    // Hapus kelas 'selected' dari tombol yang sebelumnya terpilih, dan tambahkan ke tombol yang baru
+    $(".category-btn").removeClass('selected');
+    $(this).addClass('selected');
+
+    // Tampilkan semua elemen dengan nilai data-category yang sesuai, dan sembunyikan yang lain
+    $("#portfolio .item").hide().filter("[data-category='" + filterValue + "']").show();
+
+    // Tampilkan elemen * jika filterValue adalah `All`
+    if (filterValue === "All") {
+      $("#portfolio .item").show();
+    }
+  });
+});
+
+
+
+
+
+
+</script>
 </body>
 </html>
